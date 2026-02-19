@@ -1,0 +1,296 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Primedev| Soluções Digitais Profissionais</title>
+<meta name="description" content="Primedev oferece soluções digitais profissionais: sites, landing pages, e-commerce, SEO, suporte técnico e mais. Fale conosco!">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#050505;
+  --card:#0f0f0f;
+  --roxo:#7b4dff;
+  --verde:#0df06f;
+  --vermelho:#ff3355;
+  --texto:#eaeaea;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif; background:var(--bg); color:var(--texto); overflow-x:hidden; scroll-behavior:smooth;}
+
+/* FUNDO ANIMADO */
+.bg-anim{
+  position:fixed; inset:0;
+  background:radial-gradient(circle at 20% 20%, #7b4dff33, transparent 40%),
+             radial-gradient(circle at 80% 30%, #2dff8833, transparent 40%),
+             radial-gradient(circle at 50% 80%, #ff335522, transparent 40%);
+  animation:mover 14s infinite alternate;
+  z-index:-1;
+}
+@keyframes mover{from{filter:hue-rotate(0deg)}to{filter:hue-rotate(20deg)}}
+
+/* HERO */
+.hero{min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; flex-direction:column; padding:0 20px;}
+.hero h1{font-size:4rem; font-weight:800;}
+.hero h1 span{background:linear-gradient(90deg,var(--roxo),var(--verde)); -webkit-background-clip:text; color:transparent;}
+.hero p{margin-top:15px; opacity:.85; font-size:1.1rem;}
+.hero a{margin-top:45px; display:inline-block; padding:16px 50px; border-radius:50px; background:linear-gradient(90deg,var(--verde),var(--roxo)); color:#000; font-weight:700; text-decoration:none; transition:.3s;}
+.hero a:hover{transform:translateY(-3px); box-shadow:0 15px 35px #2dff8855;}
+
+/* SECTIONS */
+section{padding:110px 8%}
+h2{text-align:center; font-size:2.5rem; margin-bottom:70px;}
+h2 span{color:var(--roxo)}
+p{line-height:1.6; opacity:.85}
+
+/* SOBRE COM SIGLA BRILHANTE */
+.sobre{display:flex; flex-wrap:wrap; gap:40px; align-items:center; justify-content:center;}
+.pw-logo{
+  width:150px; height:150px; flex:1 1 150px;
+  display:flex; align-items:center; justify-content:center;
+  font-size:4rem; font-weight:800;
+  background:linear-gradient(135deg,var(--roxo),var(--verde));
+  -webkit-background-clip:text; color:transparent;
+  text-shadow:0 0 8px #fff5,0 0 20px #7b4dff88,0 0 30px #2dff8888;
+  animation: glow 1.5s infinite alternate;
+}
+@keyframes glow{
+  0%{text-shadow:0 0 8px #fff5,0 0 20px #7b4dff88,0 0 30px #2dff8888;}
+  50%{text-shadow:0 0 15px #fff8,0 0 30px #7b4dffaa,0 0 40px #2dff88aa;}
+  100%{text-shadow:0 0 8px #fff5,0 0 20px #7b4dff88,0 0 30px #2dff8888;}
+}
+.sobre div{flex:1 1 300px;}
+
+/* SERVICES */
+.services{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:40px;}
+.service-card{background:linear-gradient(160deg,#141414,#0a0a0a); border-radius:26px; padding:38px; border:1px solid #ffffff12; transition:.35s ease, transform .3s;}
+.service-card:hover{transform:translateY(-8px); border-color:#7b4dff66; background:linear-gradient(160deg,#171717,#0d0d0d); box-shadow:0 20px 40px #000,0 0 0 1px #2dff8833;}
+.service-card h3{color:var(--verde); font-size:1.3rem;}
+.preco{margin:10px 0; font-weight:700; color:var(--roxo);}
+.service-card p{font-size:.95rem; opacity:.9; margin-bottom:18px;}
+.service-card ul{list-style:none; font-size:.85rem; opacity:.8; margin-bottom:25px;}
+.service-card ul li{margin-bottom:6px;}
+.service-card button{padding:12px 38px; border:none; border-radius:30px; background:linear-gradient(90deg,var(--roxo),var(--verde)); color:#000; font-weight:700; cursor:pointer; transition:.3s ease;}
+.service-card button:hover{transform:scale(1.05); box-shadow:0 8px 20px #2dff8855;}
+
+/* DEPOIMENTOS */
+.testimonials{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:30px;}
+.testimonial-card{background:var(--card); border-radius:20px; padding:25px; border:1px solid #ffffff12; transition:.3s ease, transform .3s;}
+.testimonial-card:hover{transform:translateY(-5px); box-shadow:0 10px 20px #000;}
+.testimonial-card p{font-style:italic; opacity:.85; margin-bottom:15px;}
+.testimonial-card h4{font-weight:700; color:var(--verde); font-size:1rem;}
+
+/* DIFERENCIAIS */
+.diferenciais{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:30px; text-align:center;}
+.diferenciais div{padding:20px; border-radius:20px; background:linear-gradient(160deg,#141414,#0a0a0a); border:1px solid #ffffff12; transition:.3s ease, transform .3s;}
+.diferenciais div:hover{transform:translateY(-5px); border-color:var(--roxo); box-shadow:0 10px 20px #000;}
+.diferenciais div h3{color:var(--verde); margin-bottom:10px}
+.diferenciais div p{opacity:.85}
+
+/* FAQ */
+.faq{max-width:900px; margin:0 auto;}
+.faq-item{margin-bottom:25px; transition:.3s ease;}
+.faq-item h4{color:var(--verde); cursor:pointer; transition:.3s ease;}
+.faq-item h4:hover{color:var(--roxo);}
+.faq-item p{display:none; margin-top:8px; opacity:.85; transition:.3s ease;}
+
+/* PORTFOLIO */
+.portfolio{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:40px;}
+
+/* NEWSLETTER */
+#newsletter{text-align:center;}
+#newsletter input{padding:12px 20px; border-radius:30px; border:none; max-width:300px;}
+#newsletter button{padding:12px 30px; border-radius:30px; border:none; background:var(--verde); margin-left:10px; cursor:pointer; transition:.3s;}
+#newsletter button:hover{transform:scale(1.05); box-shadow:0 8px 20px #2dff8855;}
+
+/* CTA FINAL */
+.final{text-align:center}
+.final a{margin-top:30px; display:inline-block; padding:18px 55px; border-radius:50px; background:var(--verde); color:#000; font-weight:700; text-decoration:none; transition:.3s ease;}
+.final a:hover{transform:translateY(-3px); box-shadow:0 10px 20px #2dff8855;}
+
+/* MODAL */
+.modal{position:fixed; inset:0; background:#000c; display:none; align-items:center; justify-content:center;}
+.modal-box{background:var(--card); padding:35px; border-radius:24px; width:90%; max-width:420px;}
+.modal-box input{width:100%; padding:14px; border:none; border-radius:12px; background:#111; color:#fff; margin-bottom:15px;}
+.modal-box button{width:100%; padding:14px; border:none; border-radius:30px; background:var(--verde); font-weight:700; cursor:pointer; transition:.3s ease;}
+.modal-box button:hover{transform:scale(1.05); box-shadow:0 8px 20px #2dff8855;}
+
+/* WHATS */
+.whats{position:fixed; bottom:25px; right:25px; background:#25d366; padding:15px 18px; border-radius:50%; font-size:22px; color:#fff; text-decoration:none; box-shadow:0 0 25px #25d36688;}
+
+/* FOOTER PROFISSIONAL */
+footer{background:#111; color:#eee; padding:50px 8%; display:flex; flex-wrap:wrap; justify-content:space-between; gap:30px;}
+footer a{color:var(--verde); text-decoration:none; transition:.3s;}
+footer a:hover{color:var(--roxo);}
+</style>
+</head>
+<body>
+
+<div class="bg-anim"></div>
+
+<!-- HERO -->
+<div class="hero" data-aos="fade-up">
+  <h1><span>Prime</span>dev</h1>
+  <p>Transformamos ideias em soluções digitais completas.
+     Criamos sites modernos, rápidos e responsivos, pensados para gerar resultados reais, fortalecer sua presença online e conectar sua marca ao público..</p>
+  <a href="#servicos">Ver serviços</a>
+</div>
+
+<!-- SOBRE -->
+<section id="sobre">
+<h2 data-aos="fade-up">Sobre <span>Primedev</span></h2>
+<div class="sobre" data-aos="fade-up">
+  <div class="pd-logo">Conheça a Primemedev:</div>
+  <div>
+    <p>A <strong>Primedev</strong> é especialista em soluções digitais para transformar sua presença online. Com design moderno, foco em conversão e suporte técnico, entregamos resultados reais para empresas de todos os tamanhos.</p>
+    <ul>
+      <li>✔ Mais de 50 projetos entregues</li>
+      <li>✔ Atendimento personalizado</li>
+      <li>✔ Garantia de satisfação</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<!-- SERVIÇOS COMPLETOS -->
+<section id="servicos">
+<h2 data-aos="fade-up"><span>Serviços</span> Primedev</h2>
+<div class="services" data-aos="fade-up">
+  <!-- Todos os serviços aqui -->
+  <div class="service-card"><h3>Site Profissional</h3><div class="preco">R$ 800 - R$ 1.500</div><p>Site completo, moderno e responsivo.</p><ul><li>✔ Design personalizado</li><li>✔ Mobile first</li><li>✔ Suporte pós-entrega</li></ul><button onclick="abrir('Site Profissional')">Solicitar</button></div>
+  <div class="service-card"><h3>Landing Page</h3><div class="preco">R$ 450 - R$ 900</div><p>Página focada em conversão.</p><ul><li>✔ Estrutura estratégica</li><li>✔ WhatsApp integrado</li><li>✔ Ideal para anúncios</li></ul><button onclick="abrir('Landing Page')">Solicitar</button></div>
+  <div class="service-card"><h3>E-commerce</h3><div class="preco">R$ 1.200 - R$ 3.000</div><p>Loja virtual completa com pagamento integrado.</p><ul><li>✔ Produtos ilimitados</li><li>✔ Carrinho e checkout seguro</li><li>✔ Integração com gateways de pagamento</li></ul><button onclick="abrir('E-commerce')">Solicitar</button></div>
+  <div class="service-card"><h3>SEO e Marketing</h3><div class="preco">R$ 300 - R$ 800</div><p>Otimização para motores de busca e marketing digital.</p><ul><li>✔ SEO On-page</li><li>✔ SEO Off-page</li><li>✔ Consultoria de marketing</li></ul><button onclick="abrir('SEO e Marketing')">Solicitar</button></div>
+  <div class="service-card"><h3>Suporte Técnico</h3><div class="preco">R$ 80 - R$ 150</div><p>Atendimento rápido para problemas técnicos.</p><ul><li>✔ PC e celular</li><li>✔ Soluções práticas</li><li>✔ Orientação clara</li></ul><button onclick="abrir('Suporte Técnico')">Solicitar</button></div>
+  <div class="service-card"><h3>Correção de Código</h3><div class="preco">A partir de R$ 150</div><p>Correção de bugs e ajustes técnicos.</p><ul><li>✔ Diagnóstico</li><li>✔ Correção de bugs</li><li>✔ Testes finais</li></ul><button onclick="abrir('Correção de Código')">Solicitar</button></div>
+  <div class="service-card"><h3>Hospedagem de Sites</h3><div class="preco">R$ 50/mês</div><p>Hospedagem rápida e segura.</p><ul><li>✔ Servidores confiáveis</li><li>✔ Backup automático</li><li>✔ Suporte técnico</li></ul><button onclick="abrir('Hospedagem de Sites')">Solicitar</button></div>
+  <div class="service-card"><h3>Manutenção de Sites</h3><div class="preco">R$ 150 - R$ 400</div><p>Atualizações e correções periódicas.</p><ul><li>✔ Atualização de plugins</li><li>✔ Correções de segurança</li><li>✔ Otimização de desempenho</li></ul><button onclick="abrir('Manutenção de Sites')">Solicitar</button></div>
+  <div class="service-card"><h3>Formatação e Instalação</h3><div class="preco">R$ 90 - R$ 150</div><p>Formatação de computadores e instalação de softwares.</p><ul><li>✔ Backup de dados</li><li>✔ Instalação de programas</li><li>✔ Otimização final</li></ul><button onclick="abrir('Formatação e Instalação')">Solicitar</button></div>
+  <div class="service-card"><h3>Remoção de Vírus</h3><div class="preco">R$ 130</div><p>Proteção e limpeza de PCs e celulares.</p><ul><li>✔ Detecção de vírus</li><li>✔ Remoção completa</li><li>✔ Proteção adicional</li></ul><button onclick="abrir('Remoção de Vírus')">Solicitar</button></div>
+</div>
+</section>
+
+<!-- DEPOIMENTOS -->
+<section id="depoimentos">
+<h2 data-aos="fade-up">O que os <span>Clientes</span> dizem</h2>
+<div class="testimonials">
+  <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100"><p>"Excelente trabalho! Meu site ficou moderno e funcional."</p><h4>– João Silva</h4></div>
+  <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200"><p>"A landing page aumentou minhas vendas. Suporte rápido."</p><h4>– Maria Santos</h4></div>
+  <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300"><p>"Profissionais competentes e comunicação clara."</p><h4>– Pedro Oliveira</h4></div>
+</div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section id="diferenciais">
+<h2 data-aos="fade-up">Por que <span>Escolher</span> a Primedev ?</h2>
+<div class="diferenciais" data-aos="fade-up">
+  <div><h3>Entrega Rápida</h3><p>Garantia de prazo cumprido para todos os projetos.</p></div>
+  <div><h3>Suporte 24h</h3><p>Estamos sempre disponíveis para solucionar problemas.</p></div>
+  <div><h3>Garantia de Qualidade</h3><p>Projetos testados e revisados para sua total satisfação.</p></div>
+  <div><h3>Design Profissional</h3><p>Sites modernos, responsivos e focados em conversão.</p></div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+<h2 data-aos="fade-up">Perguntas <span>Frequentes</span></h2>
+<div class="faq">
+  <div class="faq-item"><h4 onclick="toggleFAQ(this)">Quanto tempo leva para entregar um site?</h4><p>O prazo varia conforme o projeto, mas geralmente entre 7 a 20 dias úteis.</p></div>
+  <div class="faq-item"><h4 onclick="toggleFAQ(this)">Vocês oferecem suporte pós-entrega?</h4><p>Sim, oferecemos suporte técnico após entrega do projeto.</p></div>
+  <div class="faq-item"><h4 onclick="toggleFAQ(this)">Aceitam projetos internacionais?</h4><p>Sim, podemos trabalhar com clientes de qualquer lugar do mundo.</p></div>
+</div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+<h2 data-aos="fade-up">Projetos <span>Recentes</span></h2>
+<div class="portfolio services" data-aos="fade-up">
+  <div class="service-card"><h3>Site de link direto</h3><p>Site moderno, responsivo e otimizado.</p></div>
+  <div class="service-card"><h3>Landing Page</h3><p>Landing page focada em conversão.</p></div>
+  <div class="service-card"><h3>E-commerce</h3><p>Loja virtual completa com pagamento integrado.</p></div>
+</div>
+</section>
+<!-- CERTIFICAÇÕES / FERRAMENTAS -->
+<section id="certificacoes">
+<h2 data-aos="fade-up">Certificações & Ferramentas</h2>
+<div class="diferenciais" data-aos="fade-up">
+  <div><h3>HTML5 / CSS3 / JS</h3></div>
+  <div><h3>React / Node.js</h3></div>
+  <div><h3>WordPress / WooCommerce</h3></div>
+  <div><h3>SEO & Marketing Digital</h3></div>
+</div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="final">
+<h2>Pronto para começar?</h2>
+<a href="https://wa.me/5562993195806" target="_blank">Falar no WhatsApp</a>
+</section>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <input id="nome" placeholder="Seu nome">
+    <input id="cidade" placeholder="Cidade / Estado">
+    <button onclick="enviar()">Enviar</button>
+  </div>
+</div>
+
+<!-- WHATSAPP FLUTUANTE -->
+<a class="whats" href="https://wa.me/5562993195806" target="_blank">💬</a>
+
+<!-- RODAPÉ PROFISSIONAL -->
+<footer>
+  <div>
+    <div class="pw-logo">PD</div>
+    <p>Transformando sua presença digital com soluções modernas e suporte especializado.</p>
+  </div>
+  <div>
+    <h4>Links</h4>
+    <ul style="list-style:none; padding:0;">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#depoimentos">Depoimentos</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Contato</h4>
+    <p>WhatsApp: <a href="https://wa.me/5562993195806">(62) 99319-5806</a></p>
+    <p>Instagram: <a href="https://instagram.com/jobson.nx">@jobson.nx</a></p>
+  </div>
+  <div>
+    <h4>Localização</h4>
+    <p>Goiânia, GO, Brasil</p>
+    <p>Atendimento remoto e presencial</p>
+  </div>
+  <div style="width:100%; text-align:center; margin-top:30px; opacity:.6; font-size:.85rem;">
+    © 2025 Primedev • Desenvolvido por Jobson pereira de oliveira lima
+  </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({duration:900, once:true});
+
+let servico="";
+function abrir(s){servico=s; document.getElementById("modal").style.display="flex";}
+document.getElementById("modal").onclick=e=>{if(e.target.id==="modal") e.target.style.display="none";}
+function enviar(){
+  const nome=document.getElementById("nome").value;
+  const cidade=document.getElementById("cidade").value;
+  if(!nome||!cidade){alert("Preencha todos os campos"); return;}
+  const msg=`Olá, meu nome é ${nome}, sou de ${cidade} e quero o serviço: ${servico}.`;
+  window.open(`https://wa.me/5562993195806?text=${encodeURIComponent(msg)}`,"_blank");
+}
+function toggleFAQ(el){const p = el.nextElementSibling; p.style.display = p.style.display==="block"?"none":"block";}
+</script>
+
+</body>
+</html>
